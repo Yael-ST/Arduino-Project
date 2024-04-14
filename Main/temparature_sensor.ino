@@ -1,12 +1,12 @@
 
-void configTemp(byte add)
-{
+void config_temp(byte add) {
+  
     Wire.beginTransmission(add);
     Wire.write(0x0);
     Wire.endTransmission();
 }
 
-float readTemp(int add) {
+float read_temp(int add) {
 
   float temp;
  

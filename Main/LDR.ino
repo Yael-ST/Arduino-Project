@@ -1,17 +1,14 @@
-void config_LDR(){
-  
-   pinMode(LDR, INPUT );
+void config_LDR() {
 
+  pinMode(LDR, INPUT);
 }
 
-void read_LDR() {
+bool read_LDR() {
 
-   int analogReadPin;
-   String print_str;
+  analogReadPin = analogRead(LDR);
+  if (analogReadPin < 2000)
+    return true;
 
-   analogReadPin = analogRead(LDR);
-
-   print_str = "ldr is: " + String(analogReadPin);
-   Serial.println(print_str);
-
+  return false;
+  
 }
